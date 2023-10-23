@@ -19,7 +19,7 @@
     <div class="jumbotron" style="background-color:#f9dbd2;">
         <div class="container" style="font-family:'Times New Roman',serif;margin-bottom:-35px;margin-top:-20px">
             <h1 class="display-1" style="text-align:center; font-weight:bold; font-size:2.0em;letter-spacing:2.0px;">
-                Re-thinking Model Inversion Attacks Against Deep Neural Networks</h1>
+                Label-Only Model Inversion Attacks via Knowledge Transfer</h1>
             <hr style="border-top: 1px solid #000000; background: transparent;" class="my-4">
             
             <p class="lead" style="text-align:center;font-size:1.25em;">
@@ -28,7 +28,7 @@
                 <a href="https://miladabd.github.io/">Milad Abdollahzaden</a> |
                 <a href="https://sites.google.com/site/mancheung0407/">Ngai-Man Cheung</a> </br>
             Singapore University of Technology and Design (SUTD)<br/>
-            <em>CVPR 2023</br></em>
+            <em>Neurips 2023</br></em>
             </p>
                 
                 
@@ -61,8 +61,11 @@
         <h2 class="display-1" style="text-align:center; font-weight:bold; font-size:1.5em;letter-spacing:2.0px;">Abstract</h2>
         <hr style="border-top: 1px solid #000000; background: transparent;" class="my-4">
             <p class="lead" style="text-align:left;font-size:1.25em;">
-                Model inversion (MI) attacks aim to infer and reconstruct private training data by abusing access to a model. MI attacks have raised concerns about the leaking of sensitive information (e.g. private face images used in training a face recognition system). Recently, several algorithms for MI have been proposed to improve the attack performance. In this work, we revisit MI, study two fundamental issues pertaining to all state-of-the-art (SOTA) MI algorithms, and propose solutions to these issues which lead to a significant boost in attack performance for all SOTA MI. In particular, our contributions are two-fold: 1) We analyze the optimization objective of SOTA MI algorithms, argue that the objective is sub-optimal for achieving MI, and propose an improved optimization objective that boosts attack performance significantly. 2) We analyze “MI overfitting”, show that it would prevent reconstructed images from learning semantics of training data, and propose a novel “model augmentation” idea to overcome this issue. Our proposed solutions are simple and improve all SOTA MI attack accuracy significantly. E.g., in the standard CelebA benchmark, our solutions improve accuracy by 11.8% and achieve for the first time over 90% attack accuracy. Our findings demonstrate that there is a clear risk of leaking sensitive information from deep learning models. We urge serious consideration to be given to the privacy implications.
+                
 
+In a model inversion (MI) attack, an adversary abuses access to a machine learning (ML) model to infer and reconstruct private training data. Remarkable progress has been made in the white-box and black-box setups, where the adversary has access to the complete model or the model's soft output respectively. However, there is very limited study in the most challenging but practically important setup: Label-only MI attacks, where the adversary only has access to the model's predicted  label (hard label) without confidence scores nor any other model information.  
+
+In this work, we propose a new approach for label-only MI attacks. Our idea is based on transfer of knowledge from the opaque target model to  surrogate models. Then, with the surrogate models, our approach can harness advanced white-box attacks. We propose knowledge transfer based on generative modelling, and propose a new  Target model-assisted ACGAN (T-ACGAN) for effective knowledge transfer. Our method casts the challenging label-only MI into the more tractable white-box setup. We provide analysis to support that surrogate models based on our approach are good proxy for the target model for MI. Our experiments show that our method significantly \textbf{outperforms existing SOTA Label-only MI attack by more than 15\% across all MI benchmarks.} Furthermore, our method compares favorably in terms of query budget. Our study highlights rising privacy threats for  ML models even when minimal information (i.e.,  hard labels) is exposed.
             </p>
 
     </div>
@@ -93,13 +96,12 @@
         <hr style="border-top: 1px solid #000000; background: transparent;" class="my-4">
             
         <pre class="lead" style="text-align:left;font-size:1.0em;white-space: pre-line;">
-            <code>@InProceedings{Nguyen_2023_CVPR,
+            <code>@InProceedings{Nguyen_2023_Nerips,
     author    = {Nguyen, Ngoc-Bao and Chandrasegaran, Keshigeyan and Abdollahzadeh, Milad and Cheung, Ngai-Man},
-    title     = {Re-Thinking Model Inversion Attacks Against Deep Neural Networks},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
+    title     = {Label-Only Model Inversion Attacks via Knowledge Transfer},
+    booktitle = {Neurips},
+    month     = {Dec},
     year      = {2023},
-    pages     = {16384-16393}
 }</code>
         </pre>
     </div>
