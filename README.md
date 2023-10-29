@@ -1,1 +1,1 @@
-# label_only_tacgan
+# Label-Only Model Inversion Attacks via Knowledge Transfer
