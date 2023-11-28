@@ -1,125 +1,274 @@
-<!doctype html>
-<title>Label-Only Model Inversion Attacks via Knowledge Transfer</title>
-    <html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <!-- If IE use the latest rendering engine -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Set the page to the width of the device and set the zoon level -->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Label-Only Model Inversion Attacks via Knowledge Transfer</title>
 
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 </head>
-
-
 <body>
-    <!-- page-header-->
-    <div class="jumbotron" style="background-color:#fefefe;">
-        <div class="container" style="font-family:'Times New Roman',serif;margin-bottom:-35px;margin-top:-20px">
-            <h1 class="display-1" style="text-align:center; font-weight:bold; font-size:2.0em;letter-spacing:2.0px;">
-                Label-Only Model Inversion Attacks via Knowledge Transfer</h1>
-            <hr style="border-top: 1px solid #000000; background: transparent;" class="my-4">
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Label-Only Model Inversion Attacks via Knowledge Transfer</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=zQPES6kAAAAJ&hl=vi">Ngoc-Bao Nguyen</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran</a><sup>*2&#9768;</sup>,</span>
+            <span class="author-block">
+              <a href="https://miladabd.github.io/">Milad Abdollahzadeh</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/mancheung0407/">Ngai-Man Cheung</a><sup>1</sup>
+            </span>
             
-            <p class="lead" style="text-align:center;font-size:1.25em;">
-                <a href="https://scholar.google.com/citations?user=zQPES6kAAAAJ&hl=vi" font color="#ffffff">Ngoc-Bao Nguyen<sup>*1</sup></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran<sup>*2&Dagger;</sup></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://miladabd.github.io/">Milad Abdollahzaden<sup>1</sup></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://sites.google.com/site/mancheung0407/">Ngai-Man Cheung<sup>1</sup></a> </br>
-                <sup>1</sup> Singapore University of Technology and Design (SUTD) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <sup>2</sup> Stanford University.  <br/>
             
-            <b><em>Neurips 2023</br></em></b>
-            </p>
-                
-                
-            <p class="lead" style="text-align:center;font-size:1.25em;"> 
-                <a href="https://github.com/ngoc-nguyen-0/LOKT_neurips2023">Paper</a> |
-                <a href="https://github.com/ngoc-nguyen-0/LOKT_neurips2023">Github</a> |
-                <a href="https://github.com/ngoc-nguyen-0/LOKT_neurips2023">Models</a> |            
-                <a href="https://github.com/ngoc-nguyen-0/LOKT_neurips2023">Demo</a> 
-            </p>         
-                
+          </div>
+
+          
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Singapore University of Technology and Design (SUTD),</span>
+            <span class="author-block"><sup>2</sup>Stanford University</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">NeurIPS 2023</span>
+          </div>
+          
+          <div>
+          <span class="author-block">
+            <sup>*</sup>Equal Contribution, <sup>&#9768;</sup>Work done while at SUTD
+          </span>
         </div>
-    </div>
-    
-    <!-- Abstract -->
-    <div class="container" style="font-family:'Times New Roman',serif">
-        <h2 class="display-1" style="text-align:center; font-weight:bold; font-size:1.5em;letter-spacing:2.0px;">Abstract</h2>
-        <hr style="border-top: 1px solid #000000; background: transparent;" class="my-4">
-            <p class="lead" style="text-align:left;font-size:1.25em;text-align:justify;text-justify:inter-word;">  
-                In a model inversion (MI) attack, an adversary abuses access to a machine learning (ML) model to infer and reconstruct private training data. Remarkable progress has been made in the white-box and black-box setups, where the adversary has access to the complete model or the model's soft output respectively. However, there is very limited study in the most challenging but practically important setup: Label-only MI attacks, where the adversary only has access to the model's predicted label (hard label) without confidence scores nor any other model information.
-            </p>
-            <br>
-            <p class="lead" style="text-align:left;font-size:1.25em;text-align:justify;text-justify:inter-word;">
-                In this work, we propose LOKT, a novel approach for label-only MI attacks. Our idea is based on transfer of knowledge from the opaque target model to surrogate models. Subsequently, using these surrogate models, our approach can harness advanced white-box attacks. We propose knowledge transfer based on generative modelling, and introduce a new model, Target model-assisted ACGAN (T-ACGAN), for effective knowledge transfer. Our method casts the challenging label-only MI into the more tractable white-box setup. We provide analysis to support that surrogate models based on our approach serve as effective proxies for the target model for MI. Our experiments show that our method significantly outperforms existing SOTA Label-only MI attack by more than 15% across all MI benchmarks. Furthermore, our method compares favorably in terms of query budget. Our study highlights rising privacy threats for ML models even when minimal information (i.e., hard labels) is exposed. Our study highlights rising privacy threats for ML models even when minimal information (i.e., hard labels) is exposed.    
-            </p>
 
-    </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2310.19342"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ngoc-nguyen-0/LOKT_neurips2023"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
 
-    </br>
+              <span class="link-block">
+                <a href="https://drive.google.com/drive/folders/1kq4ArFiPmCWYKY7iiV0WxxUSXtP70bFQ?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-cubes"></i>
+                  </span>
+                  <span>Models</span>
+                  </a>
+              </span>
 
-    <!-- Proposed Approach -->
-    <div class="container" style="font-family:'Times New Roman',serif" >
-        <figure>                
-            <div class="col-md-12 text-center">
-                <img src="./assets/images/framework.jpg" alt="framework" style="width:80%;height:80%;">
+
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://colab.research.google.com/drive/1k3ml6cRV0jBZyIKbu8CTBcbraSeNP3w1?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Demo</span>
+                  </a>
             </div>
 
-            <figcaption style="text-align:justify;text-justify:inter-word;"> Figure1: Overview and our contributions.
-                (a) Under Label-only model inversion (MI) attack, the Target model T is opaque.
-                (b) Stage 1: As our first contribution, we propose a knowledge transfer scheme to render surrogate model(s). 
-                (b) Stage 2: Then, we cast the Label-only MI attack as a white-box MI attack on surrogate model(s) S.
-                (c) This casting can ease the challenging problem setup of label-only MI attack into a white-box MI attack. To our knowledge, our proposed approach is the first to address label-only MI via white-box MI attacks.
-                (d) We propose T-ACGAN to leverage generative modeling and the target model for effective knowledge transfer to render surrogate model(s). Knowledge transfer renders D (Discriminator) as a surrogate model, and further generated samples of T-ACGAN can be used to train other  surrogate variant S.
-                (e) Our analysis demonstrates that S is a good proxy for T for MI attack.
-                In particular, white-box MI attack on S mimics the white-box attack on opaque T. 
-                (f) Our proposed approach significantly improves the Label-only MI attack (e.g. 20% improvement in standard CelebA benchmark compared to existing SOTA resulting in significant improvement in private data reconstruction.
-            </figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In a model inversion (MI) attack, an adversary abuses access to a machine 
+            learning (ML) model to infer and reconstruct private training data. 
+            Remarkable progress has been made in the white-box and black-box setups, 
+            where the adversary has access to the complete model or the model's soft 
+            output respectively. However, there is very limited study in the most 
+            challenging but practically important setup: Label-only MI attacks, where 
+            the adversary only has access to the model's predicted  label (hard label) 
+            without confidence scores nor any other model information.  
+          </p>
+          <p>
+            In this work, we propose a new approach for label-only MI attacks. 
+            Our idea is based on transfer of knowledge from the opaque target model to
+            surrogate models. Then, with the surrogate models, our approach can harness 
+            advanced white-box attacks. We propose knowledge transfer based on generative
+            modelling, and propose a new  Target model-assisted ACGAN (T-ACGAN) for 
+            effective knowledge transfer. Our method casts the challenging label-only
+            MI into the more tractable white-box setup. We provide analysis to support 
+            that surrogate models based on our approach are good proxy for the target 
+            model for MI. Our experiments show that our method significantly 
+            <b>outperforms existing SOTA Label-only MI attack by more than 
+            15% across all MI benchmarks.</b> Furthermore, our method compares 
+            favorably in terms of query budget. Our study highlights rising privacy
+            threats for  ML models even when minimal information (i.e.,hard labels) 
+            is exposed.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="container" style="font-family:'Times New Roman',serif">
+        <figure>                
+            <div class="col-md-12 text-center">
+                <img src="./static/images/framework_final.jpg" alt="penultimate layer visualization" style="width:80%;height:80%;">
+            </div>
+
+            <figcaption style="text-align:justify;text-justify:inter-word;"> Figure 1: Overview and our contributions.
+              (a) Under Label-only model inversion (MI) attack, the Target model T is opaque.
+              (b) Stage 1: As our first contribution, we propose a knowledge transfer scheme to render surrogate model(s). 
+              (b) Stage 2: Then, we cast the Label-only MI attack as a white-box MI attack on surrogate model(s) S.
+              (c) This casting can ease the challenging problem setup of label-only MI attack into a white-box MI attack. To our knowledge, our proposed approach is the first to address label-only MI via white-box MI attacks.
+              (d) We propose T-ACGAN to leverage generative modeling and the target model for effective knowledge transfer to render surrogate model(s). Knowledge transfer renders D (Discriminator) as a surrogate model, and further generated samples of T-ACGAN can be used to train other surrogate variant S.
+              (e) Our analysis demonstrates that S is a good proxy for T for MI attack.
+              In particular, white-box MI attack on S mimics the white-box attack on opaque T. 
+              (f) Our proposed approach significantly improves the Label-only MI attack (e.g. 20% improvement in standard CelebA benchmark compared to existing SOTA resulting in significant improvement in private data reconstruction.
+          </figcaption>
         </figure>
     </div>
-
-
-    <!-- Citation -->
-    <div class="container" style="font-family:'Times New Roman',serif">
-        <h2 class="display-1" style="text-align:center; font-weight:bold; font-size:1.5em;letter-spacing:2.0px;">Citation</h2>
-        <hr style="border-top: 1px solid #000000; background: transparent;" class="my-4">
-            
-        <pre class="lead" style="text-align:left;font-size:1.0em;white-space: pre-line;text-align:justify;text-justify:inter-word;">
-            <code>@InProceedings{nguyen2023labelonly,
-    author    = {Nguyen, Ngoc-Bao and Chandrasegaran, Keshigeyan and Abdollahzadeh, Milad and Cheung, Ngai-Man},
-    title     = {Label-Only Model Inversion Attacks via Knowledge Transfer},
-    booktitle = {Advances in Neural Information Processing Systems},
-    month     = {Dec},
-    year      = {2023}
-}</code>
-        </pre>
     </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
 
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre class="lead" style="text-align:left;font-size:1.0em;white-space: pre-line;text-align:justify;text-justify:inter-word;">
+      <code>@InProceedings{nguyen2023labelonly,
+author    = {Nguyen, Ngoc-Bao and Chandrasegaran, Keshigeyan and Abdollahzadeh, Milad and Cheung, Ngai-Man},
+title     = {Label-Only Model Inversion Attacks via Knowledge Transfer},
+booktitle = {Advances in Neural Information Processing Systems},
+month     = {Dec},
+year      = {2023}
+}</code>
+  </pre>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
 
     <!-- Acknowledgements -->
-    <div class="container" style="font-family:'Times New Roman',serif">
-        <h2 class="display-1" style="text-align:center; font-weight:bold; font-size:1.5em;letter-spacing:2.0px;">Acknowledgements</h2>
-        <hr style="border-top: 1px solid #000000; background: transparent;" class="my-4">
-            
-            <p class="lead" style="text-align:left;font-size:1.25em;text-align:justify;text-justify:inter-word;">
-                This research is supported by the National Research Foundation, Singapore under its AI Singapore Programmes
-(AISG Award No.: AISG2-TC-2022-007) and SUTD project PIE-SGP-AI-2018-01. 
-This research work is also supported by the Agency for Science, Technology and Research (A*STAR) under its MTC Programmatic Funds (Grant No. M23L7b0021). 
-This material is based on the research/work support in part by the Changi General Hospital and Singapore University of Technology and Design, under the HealthTech Innovation Fund (HTIF Award No. CGH-SUTD-2021-004).
-We thank anonymous reviewers for their insightful feedback and discussion.
-</p>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Acknowledgements</h3>
+        <div class="content has-text-justified">
+          <p>
+            This research is supported by the National Research Foundation, Singapore under its AI Singapore Programmes
+    (AISG Award No.: AISG2-TC-2022-007) and SUTD project PIE-SGP-AI-2018-01. 
+    This research work is also supported by the Agency for Science, Technology and Research (A*STAR) under its MTC Programmatic Funds (Grant No. M23L7b0021). 
+    This material is based on the research/work support in part by the Changi General Hospital and Singapore University of Technology and Design, under the HealthTech Innovation Fund (HTIF Award No. CGH-SUTD-2021-004).
+    We thank anonymous reviewers for their insightful feedback and discussion.
+          </p>
+        </div>
+        
+      </div>
     </div>
-    <div class="container" style="font-family:'Times New Roman',serif">
-        <hr style="border-top: 1px solid #000000; background: transparent;" class="my-4">            
-            <p class="lead" style="text-align:left;font-size:1.25em;">
-            <em> <sup>*</sup> These authors contributed equally  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <sup>&Dagger;</sup> Work done while at SUTD.</em> <br/>
+    <!--/ Acknowledgements -->
 
-    </p>
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </div>
+</footer>
 
 </body>
 </html>
